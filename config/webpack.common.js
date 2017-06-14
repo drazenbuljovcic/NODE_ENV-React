@@ -2,16 +2,15 @@ const webpack = require('webpack'),
   path = require('path'),
   webpackHtml = require('html-webpack-plugin');
 
-const config = {
+module.exports = {
   entry: {
-    'app': path.join(__dirname, 'app', 'src', 'app.js')
+    'app': path.join(__dirname, '..', 'app', 'src', 'app.js')
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'js/[name].[hash:6].js',
     publicPath: '/'
   },
-  devtool: 'source-map',
   resolve: {
     extensions: [ '.js', '.html' ],
     modules: [ 'node_modules' ],
@@ -25,7 +24,12 @@ const config = {
         test: /.jsx?/,
         exclude: /node_modules/,
         use: [
-          'babel-loader'
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['react', 'es2015']
+            }
+          }
         ]
       }
     ]
@@ -33,7 +37,7 @@ const config = {
   plugins: [
     
     new webpackHtml({
-      template: path.join(__dirname, 'app', 'index.html')
+      template: path.join(__dirname, '..', 'app', 'index.html')
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
@@ -42,11 +46,9 @@ const config = {
         return module.context && module.context.indexOf('node_modules') !== -1;
       },
       name: 'vendor'
-    }),    
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest'
     }),
   ]
 }
-
-module.exports = config;

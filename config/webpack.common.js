@@ -12,10 +12,11 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: [ '.js', '.html' ],
+    extensions: [ '.js', '.html', '.sass' ],
     modules: [ 'node_modules' ],
     alias: {
-      '~': path.join(__dirname, 'app', 'src')
+      '~': path.join(__dirname, '..', 'app', 'src'),
+      '@': path.join(__dirname, '..', 'app')
     }
   },
   module: {

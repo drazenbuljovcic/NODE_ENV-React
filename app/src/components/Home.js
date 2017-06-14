@@ -8,7 +8,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <p>Home - {this.props.config.env}</p>
+      <img src={require('@/assets/images/logo.svg')} />
     )
   }
 }

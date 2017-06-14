@@ -4,10 +4,10 @@ const webpack = require('webpack'),
 
 module.exports = {
   entry: {
-    'app': path.join(__dirname, '..', 'app', 'src', 'app.js')
+    'app': path.join(__dirname, '..', 'app', 'src', 'app-browser.js')
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '..', 'dist'),
     filename: 'js/[name].[hash:6].js',
     publicPath: '/'
   },
@@ -38,6 +38,9 @@ module.exports = {
     
     new webpackHtml({
       template: path.join(__dirname, '..', 'app', 'index.html')
+    }),
+    new webpack.DefinePlugin({
+      'env': JSON.stringify(process.env.NODE_ENV || '')
     }),
 
     new webpack.optimize.CommonsChunkPlugin({

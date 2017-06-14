@@ -1,4 +1,13 @@
 {
   "presets": ["es2015", "react"],
-  "plugins": ["transform-es2015-destructuring", "transform-object-rest-spread"]
+  "plugins": ["transform-es2015-destructuring", "transform-object-rest-spread"],
+  "env": {
+      "production": {
+        "plugins": [
+          "transform-react-constant-elements",
+          "transform-react-inline-elements",
+          ["transform-react-jsx", { "pragma": "h" }]
+        ]
+      }
+    }
 }

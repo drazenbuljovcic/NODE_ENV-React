@@ -24,9 +24,8 @@ if(env === 'development') {
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Main>
-      </Main>
+      <Main />
     </Router>
   </Provider>,
-  document.querySelector('#app')
+  document.body
 )

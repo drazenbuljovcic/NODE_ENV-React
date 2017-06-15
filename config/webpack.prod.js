@@ -7,7 +7,7 @@ const webpack = require('webpack'),
 
 const commonConfig = require('./webpack.common.js');
 
-const BUILD = !!process.env.BUILD;
+const ANALYZE = !!process.env.ANALYZE;
 
 module.exports = webpackMerge(commonConfig, {
   module: {
@@ -27,10 +27,10 @@ module.exports = webpackMerge(commonConfig, {
       basePath: '/'
     }),
     new webpackBundleAnalyzer({
-      analyzerMode: !BUILD ? 'server': 'disabled',
+      analyzerMode: ANALYZE ? 'server': 'disabled',
       analyzerHost: '127.0.0.1',
       analyzerPort: 3001,
-      openAnalyzer: !BUILD,
+      openAnalyzer: ANALYZE,
       generateStatsFile: false,
     }),
     new webpackPreload({

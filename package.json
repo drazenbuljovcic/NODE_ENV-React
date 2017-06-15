@@ -12,7 +12,7 @@
     "build:prod": "BUILD=true NODE_ENV=production webpack -p --config config/webpack.prod.js --progress --colors",
     "start:server": "NODE_ENV=production node server/server.js",
     "start": "npm run build:prod && npm run start:server",
-    "analyze-bundle": "NODE_ENV=production webpack -p --config config/webpack.prod.js --progress --colors "
+    "analyze-bundle": "ANALYZE=true NODE_ENV=production webpack -p --config config/webpack.prod.js --progress --colors "
   },
   "repository": {
     "type": "git",

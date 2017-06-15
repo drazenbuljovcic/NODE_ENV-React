@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest --coverage --watch",
     "clean": "rm -rf dist/",
     "prebuild:dev": "npm run clean",
     "build:dev": "BUILD=true NODE_ENV=development webpack --config config/webpack.dev-build.js --display-error-details --progress --colors",
@@ -48,6 +49,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "eslint": "^4.0.0",
     "eslint-loader": "^1.7.1",

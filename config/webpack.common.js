@@ -1,6 +1,7 @@
 const webpack = require('webpack'),
   path = require('path'),
-  webpackHtml = require('html-webpack-plugin');
+  webpackHtml = require('html-webpack-plugin'),
+  webpackCopy = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -56,8 +57,13 @@ module.exports = {
     new webpackHtml({
       template: path.join(__dirname, '..', 'app', 'index.html')
     }),
+    new webpackCopy([
+      { from: path.join(__dirname, '..', 'app/manifest.json' ), to: './' },
+      { from: path.join(__dirname, '..', 'app/assets/images/logo.png' ), to: './' },
+      { from: path.join(__dirname, '..', 'app/favicon.ico' ), to: './' },
+      { from: path.join(__dirname, '..', 'app/src/sw.js' ), to: './' },
+    ]),
     new webpack.DefinePlugin({
-      'react': 'React',
       'env': JSON.stringify(process.env.NODE_ENV || '')
     }),
 

@@ -18,11 +18,18 @@ if(env === 'development') {
   }
 }
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      <Main />
-    </Router>
-  </Provider>,
-  document.querySelector('#app')
-);
+Promise.resolve(
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router history={browserHistory}>
+        <Main />
+      </Router>
+    </Provider>,
+    document.querySelector('#app')
+  )).then(() => {
+
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+  
+});

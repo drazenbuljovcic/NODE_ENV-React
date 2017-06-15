@@ -23,7 +23,7 @@ module.exports = webpackMerge(commonConfig, {
   },
   plugins: [
     new webpackManifest({
-      filename: 'webpack-manifest.json',
+      fileName: 'webpack-manifest.json',
       basePath: '/'
     }),
     new webpackBundleAnalyzer({

@@ -12,6 +12,7 @@
         "es6": true
     },
     "globals": {
+        "process": false,
         "__dirname": false,
         "env": false
     },

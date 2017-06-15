@@ -8,7 +8,7 @@ module.exports.allStyles = {
     'postcss-loader?sourceMap',
     'sass-loader?sourceMap&sourceComments'
   ]
-}
+};
 
 module.exports.exportStyles = {
   test: /.sass/,
@@ -20,7 +20,7 @@ module.exports.exportStyles = {
       'sass-loader?sourceMap&sourceComments'
     ]
   })
-}
+};
 
 // module.exports.mainStyles = {
 //   test: /^\/styles\/main.sass$/,

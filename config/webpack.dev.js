@@ -10,4 +10,4 @@ module.exports = webpackMerge(commonConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     new friendlyErrorsPlugin()
   ],
-})
+});

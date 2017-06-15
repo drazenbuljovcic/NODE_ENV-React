@@ -1,5 +1,5 @@
 const webpack = require('webpack'),
-  webpackMerge = require('webpack-merge')
+  webpackMerge = require('webpack-merge'),
   webpackExtract = require('extract-text-webpack-plugin'),
   webpackManifest = require('webpack-manifest-plugin'),
   webpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin,

@@ -2,16 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { 
   BrowserRouter as Router,
-  browserHistory,
-  IndexRoute,
-  Route }
-from 'react-router-dom';
+  browserHistory }
+  from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import store from './store';
 
 import Main from './Main';
-import Home from './components/Home';
 
 import '@/styles/inline';
 
@@ -27,5 +24,5 @@ ReactDOM.render(
       <Main />
     </Router>
   </Provider>,
-  document.body
-)
+  document.querySelector('#app')
+);

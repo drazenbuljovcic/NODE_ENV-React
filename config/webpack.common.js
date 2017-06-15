@@ -2,6 +2,7 @@ const webpack = require('webpack'),
   path = require('path'),
   webpackHtml = require('html-webpack-plugin');
 
+
 module.exports = {
   entry: {
     'app': path.join(__dirname, '..', 'app', 'src', 'app-browser.js')
@@ -22,13 +23,15 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.jsx?/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+      {
         test: /.jsx?/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          }
-        ]
+        use: 'babel-loader'
       },
       {
         test: /\.(png|gif|jpe?g|svg)$/,
@@ -54,6 +57,7 @@ module.exports = {
       template: path.join(__dirname, '..', 'app', 'index.html')
     }),
     new webpack.DefinePlugin({
+      'react': 'React',
       'env': JSON.stringify(process.env.NODE_ENV || '')
     }),
 
@@ -68,4 +72,4 @@ module.exports = {
       name: 'manifest'
     }),
   ]
-}
+};

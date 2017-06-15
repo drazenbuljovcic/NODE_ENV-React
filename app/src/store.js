@@ -1,4 +1,4 @@
-import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 
 import ReduxThunk from 'redux-thunk';
 
@@ -14,6 +14,6 @@ if (env !== 'production') {
 
 const reducers = combineReducers({
   config: configReducer,
-})
+});
 
 export default applyMiddleware(...middleware)(createStore)(reducers);

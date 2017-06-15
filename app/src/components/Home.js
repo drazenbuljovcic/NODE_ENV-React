@@ -9,7 +9,7 @@ class Home extends React.Component {
   render() {
     return (
       <img src={require('@/assets/images/logo.svg')} />
-    )
+    );
   }
 }
 export default connect(state => state)(Home);

@@ -28,7 +28,6 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.15.3",
-    "preact-router": "^2.5.2",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.5",

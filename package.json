@@ -19,8 +19,8 @@
     "type": "git",
     "url": "git+https://github.com/zendra1994/NODE_ENV-React.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Dražen Buljovčić <drazen.buljovcic@gmail.com",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zendra1994/NODE_ENV-React/issues"
   },
@@ -28,14 +28,11 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.15.3",
-    "preact": "^8.1.0",
-    "preact-compat": "^3.16.0",
     "preact-router": "^2.5.2",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "react-router-server": "^4.2.1",
     "redux": "^3.6.0"
   },
   "devDependencies": {

@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=testing karma start",
-    "clean": "rm -rf dist/",
+    "test": "cross-env NODE_ENV=testing karma start",
+    "clean": "rimraf dist/",
     "prebuild:dev": "npm run clean",
-    "build:dev": "BUILD=true NODE_ENV=development webpack --config config/webpack.dev-build.js --display-error-details --progress --colors",
-    "start:dev": "NODE_ENV=development webpack-dev-server --config config/webpack.dev-server.js --inline --hot --progress --colors",
+    "build:dev": "cross-env BUILD=true NODE_ENV=development webpack --config config/webpack.dev-build.js --display-error-details --progress --colors",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.dev-server.js --inline --hot --progress --colors",
     "prebuild:prod": "npm run clean",
-    "build:prod": "BUILD=true NODE_ENV=production webpack -p --config config/webpack.prod.js --progress --colors",
-    "start:server": "NODE_ENV=production node server/server.js",
+    "build:prod": "cross-env BUILD=true NODE_ENV=production webpack -p --config config/webpack.prod.js --progress --colors",
+    "start:server": "cross-env NODE_ENV=production node server/server.js",
     "start": "npm run build:prod && npm run start:server",
-    "analyze-bundle": "ANALYZE=true NODE_ENV=production webpack -p --config config/webpack.prod.js --progress --colors "
+    "analyze-bundle": "cross-env ANALYZE=true NODE_ENV=production webpack -p --config config/webpack.prod.js --progress --colors "
   },
   "repository": {
     "type": "git",
@@ -27,12 +27,14 @@
   "homepage": "https://github.com/zendra1994/NODE_ENV-React#readme",
   "dependencies": {
     "compression": "^1.6.2",
+    "cross-env": "^5.0.5",
     "express": "^4.15.3",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "rimraf": "^2.6.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
